@@ -21,6 +21,12 @@ import com.devo.crt.service.ranking.model.CompetitionResultFileBM;
 @Repository
 public class CompetitionResultRepositoryFileStoreImpl implements CompetitionResultRepository {
 	
+	public static int COMPETITOR_ID_INDEX = 0;
+	public static int COMPETITOR_NAME_INDEX = 1;
+	public static int COMPETITOR_ACCUMULATED_POINTS_INDEX = 2;
+	public static int COMPETITOR_RANK_INDEX = 3;
+	
+	
 	@Autowired
 	private CRTSettings settings;
 	

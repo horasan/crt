@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.devo.crt.restful.competition.v1.WSCompetitor;
+import com.devo.crt.restful.competitor.CompetitorApi;
 import com.devo.crt.service.competitor.CompetitorService;
 import com.devo.crt.service.ranking.model.CompetitorBM;
 

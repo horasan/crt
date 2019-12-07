@@ -7,6 +7,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import com.devo.crt.repository.ranking.CompetitionResultRepositoryFileStoreImpl;
 import com.devo.crt.service.ranking.model.CompetitionResultBM;
 import com.devo.crt.service.ranking.model.CompetitionResultFileBM;
 import com.devo.crt.service.ranking.model.CompetitorBM;
@@ -33,10 +34,10 @@ public class FileContentFormatter {
 			competitionResultBM = new CompetitionResultBM();
 			String[] competitorPropertiesList = competitorInfo.split(" ");
 			competitorBM = new CompetitorBM();
-			competitorBM.setCompetitorId(competitorPropertiesList[0]);
-			competitorBM.setName(competitorPropertiesList[1]);
-			competitionResultBM.setAccumulatedPoints(Integer.valueOf(competitorPropertiesList[2]));
-			competitionResultBM.setRanking(Integer.valueOf(competitorPropertiesList[3]));
+			competitorBM.setCompetitorId(competitorPropertiesList[CompetitionResultRepositoryFileStoreImpl.COMPETITOR_ID_INDEX]);
+			competitorBM.setName(competitorPropertiesList[CompetitionResultRepositoryFileStoreImpl.COMPETITOR_NAME_INDEX]);
+			competitionResultBM.setAccumulatedPoints(Integer.valueOf(competitorPropertiesList[CompetitionResultRepositoryFileStoreImpl.COMPETITOR_ACCUMULATED_POINTS_INDEX]));
+			competitionResultBM.setRanking(Integer.valueOf(competitorPropertiesList[CompetitionResultRepositoryFileStoreImpl.COMPETITOR_RANK_INDEX]));
 			competitionResultBM.setCompetitorBM(competitorBM);
 			competitionResults.add(competitionResultBM);
 		}

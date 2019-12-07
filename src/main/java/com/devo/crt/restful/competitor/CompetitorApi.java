@@ -1,4 +1,4 @@
-package com.devo.crt.restful.competitor.v1;
+package com.devo.crt.restful.competitor;
 
 import java.util.List;
 
