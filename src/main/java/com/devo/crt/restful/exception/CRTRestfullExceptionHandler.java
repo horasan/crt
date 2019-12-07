@@ -35,4 +35,17 @@ public class CRTRestfullExceptionHandler {
         
     }
 
+	@ExceptionHandler(Exception.class)
+	public ResponseEntity<CRTErrorResponse> handleAllExceptions(Exception ex, WebRequest request) {
+
+		CRTErrorResponse errorResponse = new CRTErrorResponse();
+        errorResponse.setTimeStamp(LocalDateTime.now());
+        errorResponse.setMessage(ex.getMessage());
+        errorResponse.setStatus(HttpStatus.INTERNAL_SERVER_ERROR.value());
+        errorResponse.setCode("unknown.error");
+        return new ResponseEntity<>(errorResponse, HttpStatus.INTERNAL_SERVER_ERROR);
+        
+    }
+
+	
 }

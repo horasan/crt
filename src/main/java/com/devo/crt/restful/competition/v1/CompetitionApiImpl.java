@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.devo.crt.restful.competition.CompetitionApi;
-import com.devo.crt.service.ranking.RankingService;
+import com.devo.crt.service.competition.CompetitionService;
 import com.devo.crt.service.ranking.model.CompetitionResultBM;
 import com.devo.crt.service.ranking.model.CompetitionResultFileBM;
 import com.devo.crt.service.ranking.model.DefaultServiceResponseBM;
@@ -32,7 +32,7 @@ public class CompetitionApiImpl implements CompetitionApi {
 	// TODO: exception handling, return codes
 	
 	@Autowired
-	private RankingService rankingService;  
+	private CompetitionService rankingService;  
 	
 	@Override
 	public ResponseEntity<WSCompetitionResultFile> getAllRankings() {
@@ -49,7 +49,7 @@ public class CompetitionApiImpl implements CompetitionApi {
 	@Override
 	public ResponseEntity<WSDefaultApiResponse> saveCompetitionResultFile(WSCompetitionResultFile resultFile) {
 		DefaultServiceResponseBM serviceResponse = rankingService.saveCompetitionResultFile(resultFile.toBM());
-		//return new ResponseEntity<WSDefaultApiResponse>(new WSDefaultApiResponse(serviceResponse), HttpStatus.OK);
+		//
 		return new ResponseEntity<WSDefaultApiResponse>(new WSDefaultApiResponse(serviceResponse), HttpStatus.OK);
 	}
 

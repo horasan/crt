@@ -1,12 +1,9 @@
 package com.devo.crt.restful.competitor.v1;
 
-import java.util.Collection;
-import java.util.Collections;
 import java.util.List;
-import java.util.Objects;
 import java.util.stream.Collectors;
 
-import org.junit.platform.commons.util.CollectionUtils;
+import org.apache.commons.collections4.CollectionUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -33,12 +30,11 @@ public class CompetitorApiImpl implements CompetitorApi {
 
 		List<CompetitionResultBM> competitor = competitorService.getCompetitor(competitorName);
 		
-		List<WSCompetitionResult> result = competitor.stream().map(WSCompetitionResult::new).collect(Collectors.toList()); 
-		if (result.isEmpty()) {
-			//return new ResponseEntity<List<WSCompetitionResult>>(result, HttpStatus.NOT_FOUND);
+		if ( CollectionUtils.isEmpty(competitor)) {
 			throw new CompetitorNotFound(competitorName);
 		}
 		
+		List<WSCompetitionResult> result = competitor.stream().map(WSCompetitionResult::new).collect(Collectors.toList()); 
 		return new ResponseEntity<List<WSCompetitionResult>>(result, HttpStatus.OK);
 	}
 

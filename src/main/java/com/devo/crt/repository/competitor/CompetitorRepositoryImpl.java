@@ -6,7 +6,7 @@ import java.util.stream.Collectors;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-import com.devo.crt.repository.ranking.CompetitionResultRepository;
+import com.devo.crt.repository.competition.CompetitionResultRepository;
 import com.devo.crt.service.ranking.model.CompetitionResultBM;
 import com.devo.crt.service.ranking.model.CompetitionResultFileBM;
 import com.devo.crt.service.ranking.model.CompetitorBM;

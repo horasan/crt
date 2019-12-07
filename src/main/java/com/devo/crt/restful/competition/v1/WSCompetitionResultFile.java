@@ -45,4 +45,5 @@ public class WSCompetitionResultFile {
 		competitionResults = resultFile.getCompetitionResults().stream().map(WSCompetitionResult::new).collect(Collectors.toList());
 	}
 	
+	
 }

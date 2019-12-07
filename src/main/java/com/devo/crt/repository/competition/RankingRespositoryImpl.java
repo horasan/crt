@@ -1,4 +1,4 @@
-package com.devo.crt.repository.ranking;
+package com.devo.crt.repository.competition;
 
 import org.springframework.stereotype.Repository;
 

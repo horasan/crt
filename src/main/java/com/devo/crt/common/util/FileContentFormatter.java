@@ -7,7 +7,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import com.devo.crt.repository.ranking.CompetitionResultRepositoryFileStoreImpl;
+import com.devo.crt.repository.competition.CompetitionResultRepositoryFileStoreImpl;
 import com.devo.crt.service.ranking.model.CompetitionResultBM;
 import com.devo.crt.service.ranking.model.CompetitionResultFileBM;
 import com.devo.crt.service.ranking.model.CompetitorBM;

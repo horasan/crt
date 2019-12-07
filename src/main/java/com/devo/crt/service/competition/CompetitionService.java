@@ -1,4 +1,4 @@
-package com.devo.crt.service.ranking;
+package com.devo.crt.service.competition;
 
 import java.util.List;
 
@@ -14,7 +14,7 @@ import com.devo.crt.service.ranking.model.DefaultServiceResponseBM;
  * 
  */
 
-public interface RankingService {
+public interface CompetitionService {
 	public DefaultServiceResponseBM saveCompetitionResultFile(CompetitionResultFileBM resultFile);
 	
 	public CompetitionResultFileBM getAllRankings();
