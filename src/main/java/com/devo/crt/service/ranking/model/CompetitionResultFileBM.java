@@ -38,6 +38,7 @@ public class CompetitionResultFileBM {
 				.collect(Collectors.toList());
 		
 		Collections.reverse(sortedResults);
+		
 				
 		
 		int currentRanking = 0;

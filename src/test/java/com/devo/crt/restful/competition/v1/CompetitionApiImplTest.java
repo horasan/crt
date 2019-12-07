@@ -1,21 +1,14 @@
 package com.devo.crt.restful.competition.v1;
 
-import java.util.Arrays;
-import java.util.List;
-
 import org.junit.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.platform.runner.JUnitPlatform;
 import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
-import org.mockito.Matchers;
 import org.mockito.Mock;
-import org.mockito.Mockito;
 import org.mockito.junit.jupiter.MockitoExtension;
 
 import com.devo.crt.service.competition.CompetitionService;
-import com.devo.crt.service.ranking.model.CompetitionResultFileBM;
-import com.devo.crt.service.ranking.model.DefaultServiceResponseBM;
 
 @ExtendWith(MockitoExtension.class)
 @RunWith(JUnitPlatform.class)
