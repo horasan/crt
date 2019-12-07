@@ -40,18 +40,21 @@ public class CompetitionResultFileBM {
 		Collections.reverse(sortedResults);
 				
 		
-		int ranking = 0;
+		int currentRanking = 0;
+	
 		int currentPoint = -1;
 		
 		for(CompetitionResultBM result: sortedResults) {
-			if (result.getAccumulatedPoints() > currentPoint) {
-				result.setRanking(++ranking);
+			
+			if (result.getAccumulatedPoints() == currentPoint) {
+				result.setRanking(currentRanking);
+				
 			}
-			else if (result.getAccumulatedPoints() == currentPoint) {
-				result.setRanking(ranking);
+			else {
+				result.setRanking(++currentRanking);
 			}
 			
-			
+			currentPoint = result.getAccumulatedPoints();
 			
 		}
 		

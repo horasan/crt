@@ -1,5 +1,7 @@
 package com.devo.crt.restful.competition.v1;
 
+import java.util.List;
+
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -16,5 +18,8 @@ public interface CompetitionApi {
 	public ResponseEntity<WSDefaultApiResponse> saveCompetitionResultFile(@RequestBody WSCompetitionResultFile resultFile);
 	
 	@GetMapping("/competition/ranking/{ranking}")
-	public ResponseEntity<WSCompetitionResult> getCompetitorByRanking(@PathVariable("ranking") Integer ranking);
+	public ResponseEntity<List<WSCompetitionResult>> getCompetitorByRanking(@PathVariable("ranking") Integer ranking);
+	
+	@GetMapping("/competition/points/{accumulatedPoints}")
+	public ResponseEntity<List<WSCompetitionResult>> getCompetitorByAccumulatedPoints(@PathVariable("accumulatedPoints") Integer accumulatedPoints);
 }

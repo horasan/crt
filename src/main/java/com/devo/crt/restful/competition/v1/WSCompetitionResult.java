@@ -33,5 +33,6 @@ public class WSCompetitionResult {
 		
 		wsCompetitor = new WSCompetitor(competitionResult.getCompetitorBM());
 		accumulatedPoints = competitionResult.getAccumulatedPoints();
+		ranking = competitionResult.getRanking();
 	}
 }

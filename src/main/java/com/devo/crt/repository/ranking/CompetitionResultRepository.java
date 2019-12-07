@@ -1,5 +1,7 @@
 package com.devo.crt.repository.ranking;
 
+import java.util.List;
+
 import com.devo.crt.service.ranking.model.CompetitionResultBM;
 import com.devo.crt.service.ranking.model.CompetitionResultFileBM;
 
@@ -9,5 +11,8 @@ public interface CompetitionResultRepository {
 	
 	public CompetitionResultFileBM getCompetitionResultFile();
 
-	public CompetitionResultBM getCompetitorByRanking(Integer ranking);
+	public List<CompetitionResultBM> getCompetitorByRanking(Integer ranking);
+
+	public List<CompetitionResultBM> getCompetitorByAccumulatedPoints(Integer accumulatedPoints);
+	
 }

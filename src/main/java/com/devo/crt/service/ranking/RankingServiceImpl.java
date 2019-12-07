@@ -1,5 +1,7 @@
 package com.devo.crt.service.ranking;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -34,8 +36,13 @@ public class RankingServiceImpl implements RankingService {
 	}
 
 	@Override
-	public CompetitionResultBM getCompetitorByRanking(Integer ranking) {
+	public List<CompetitionResultBM> getCompetitorByRanking(Integer ranking) {
 		return competitionResultRepository.getCompetitorByRanking(ranking);
+	}
+
+	@Override
+	public List<CompetitionResultBM> getCompetitorByAccumulatedPoints(Integer accumulatedPoints) {
+		return competitionResultRepository.getCompetitorByAccumulatedPoints(accumulatedPoints);
 	}
 
 

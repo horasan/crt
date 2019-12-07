@@ -7,6 +7,7 @@ import java.nio.file.Paths;
 import java.nio.file.StandardOpenOption;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -80,12 +81,16 @@ public class CompetitionResultRepositoryFileStoreImpl implements CompetitionResu
 	    //return new CompetitionResultFileBM(contentBuilder.toString());
 	    return fileContentFormatter.convertFromString(contentBuilder.toString());
 		
-		
 	}
 
 	@Override
-	public CompetitionResultBM getCompetitorByRanking(Integer ranking) {
-		return getCompetitionResultFile().getCompetitionResults().get(ranking);
+	public List<CompetitionResultBM> getCompetitorByRanking(Integer ranking) {
+		return getCompetitionResultFile().getCompetitionResults().stream().filter(res -> res.getRanking().equals(ranking)).collect(Collectors.toList());
+	}
+
+	@Override
+	public List<CompetitionResultBM> getCompetitorByAccumulatedPoints(Integer accumulatedPoints) {
+		return getCompetitionResultFile().getCompetitionResults().stream().filter(res -> res.getAccumulatedPoints().equals(accumulatedPoints)).collect(Collectors.toList());
 	}
 	
 }

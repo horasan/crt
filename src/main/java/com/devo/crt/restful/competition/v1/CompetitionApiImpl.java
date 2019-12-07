@@ -1,5 +1,8 @@
 package com.devo.crt.restful.competition.v1;
 
+import java.util.List;
+import java.util.stream.Collectors;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -50,10 +53,18 @@ public class CompetitionApiImpl implements CompetitionApi {
 
 
 	@Override
-	public ResponseEntity<WSCompetitionResult> getCompetitorByRanking(Integer ranking) {
-		CompetitionResultBM competitorByRanking = rankingService.getCompetitorByRanking(ranking);
-		WSCompetitionResult result = new WSCompetitionResult(competitorByRanking);
-		return new ResponseEntity<WSCompetitionResult>(result, HttpStatus.OK);
+	public ResponseEntity<List<WSCompetitionResult>> getCompetitorByRanking(Integer ranking) {
+		List<CompetitionResultBM> competitorByRanking = rankingService.getCompetitorByRanking(ranking);
+		List<WSCompetitionResult> result = competitorByRanking.stream().map(WSCompetitionResult::new).collect(Collectors.toList()); 
+		return new ResponseEntity<List<WSCompetitionResult>>(result, HttpStatus.OK);
+	}
+
+
+	@Override
+	public ResponseEntity<List<WSCompetitionResult>> getCompetitorByAccumulatedPoints(Integer accumulatedPoints) {
+		List<CompetitionResultBM> competitorByRanking = rankingService.getCompetitorByAccumulatedPoints(accumulatedPoints);
+		List<WSCompetitionResult> result = competitorByRanking.stream().map(WSCompetitionResult::new).collect(Collectors.toList()); 
+		return new ResponseEntity<List<WSCompetitionResult>>(result, HttpStatus.OK);
 	}
 
 
