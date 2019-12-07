@@ -6,11 +6,11 @@ import java.util.stream.Collectors;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.devo.crt.restful.competitor.CompetitionApi;
+import com.devo.crt.restful.competition.CompetitionApi;
 import com.devo.crt.service.ranking.RankingService;
 import com.devo.crt.service.ranking.model.CompetitionResultBM;
 import com.devo.crt.service.ranking.model.CompetitionResultFileBM;
@@ -26,6 +26,7 @@ import com.devo.crt.service.ranking.model.DefaultServiceResponseBM;
 
 @RestController
 @RequestMapping("/competitionapi/v1")
+@CrossOrigin
 public class CompetitionApiImpl implements CompetitionApi {
 
 	// TODO: exception handling, return codes
@@ -66,6 +67,14 @@ public class CompetitionApiImpl implements CompetitionApi {
 		List<CompetitionResultBM> competitorByRanking = rankingService.getCompetitorByAccumulatedPoints(accumulatedPoints);
 		List<WSCompetitionResult> result = competitorByRanking.stream().map(WSCompetitionResult::new).collect(Collectors.toList()); 
 		return new ResponseEntity<List<WSCompetitionResult>>(result, HttpStatus.OK);
+	}
+
+
+	@Override
+	public ResponseEntity<WSDefaultApiResponse> saveCompetitionResultFile(WSCompetitionResultFileRaw resultFile) {
+		System.out.println("FILE NAME:" + resultFile.getFileName());
+		System.out.println("FILE CONTENT:" + resultFile.getRawFileContent());
+		return null;
 	}
 
 

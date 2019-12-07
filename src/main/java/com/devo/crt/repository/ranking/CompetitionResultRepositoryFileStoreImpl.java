@@ -15,6 +15,7 @@ import org.springframework.stereotype.Repository;
 
 import com.devo.crt.common.util.CRTSettings;
 import com.devo.crt.common.util.FileContentFormatter;
+import com.devo.crt.restful.exception.CompetitionResultFileNotFound;
 import com.devo.crt.service.ranking.model.CompetitionResultBM;
 import com.devo.crt.service.ranking.model.CompetitionResultFileBM;
 
@@ -73,6 +74,14 @@ public class CompetitionResultRepositoryFileStoreImpl implements CompetitionResu
 		List<String> list = new ArrayList<>();
 
 		String fileName = settings.getCompetitionResultFileFolderName().concat("//testFile1.txt");
+		
+		File competitionResultFile = new File(fileName);
+		
+		if (!competitionResultFile.exists()) {
+			throw new CompetitionResultFileNotFound();
+		}
+		
+		//CompetitionResultFileNotFound
 		
 		StringBuilder contentBuilder = new StringBuilder();
 	    try (Stream<String> stream = Files.lines( Paths.get(fileName))) 

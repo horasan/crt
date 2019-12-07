@@ -18,13 +18,13 @@ public class CompetitorRepositoryImpl implements CompetitorRepository {
 	private CompetitionResultRepository competitionResultRepository;
 	
 	@Override
-	public List<CompetitorBM> findByName(String name) {
+	public List<CompetitionResultBM> findByName(String name) {
 
 		CompetitionResultFileBM competitionResultFile = competitionResultRepository.getCompetitionResultFile();
 		
-		List<CompetitorBM> competitorList = competitionResultFile.getCompetitionResults().stream()
+		List<CompetitionResultBM> competitorList = competitionResultFile.getCompetitionResults().stream()
 				.filter(comp -> comp.getCompetitorBM().getName().equals(name))
-				.map(CompetitionResultBM::getCompetitorBM)
+				//.map(CompetitionResultBM::getCompetitorBM)
 				.collect(Collectors.toList());
 		
 		return competitorList;

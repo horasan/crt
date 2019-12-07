@@ -2,6 +2,7 @@ package com.devo.crt.service.competitor;
 
 import java.util.List;
 
+import com.devo.crt.service.ranking.model.CompetitionResultBM;
 import com.devo.crt.service.ranking.model.CompetitorBM;
 
 /**
@@ -11,5 +12,5 @@ import com.devo.crt.service.ranking.model.CompetitorBM;
 
 
 public interface CompetitorService {
-	public List<CompetitorBM> getCompetitor(String competitorName);
+	public List<CompetitionResultBM> getCompetitor(String competitorName);
 }

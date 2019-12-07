@@ -1,4 +1,4 @@
-package com.devo.crt.restful.competitor;
+package com.devo.crt.restful.competition;
 
 import java.util.List;
 
@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 
 import com.devo.crt.restful.competition.v1.WSCompetitionResult;
 import com.devo.crt.restful.competition.v1.WSCompetitionResultFile;
+import com.devo.crt.restful.competition.v1.WSCompetitionResultFileRaw;
 import com.devo.crt.restful.competition.v1.WSDefaultApiResponse;
 
 
@@ -20,6 +21,9 @@ public interface CompetitionApi {
 	
 	@PostMapping("/competition")
 	public ResponseEntity<WSDefaultApiResponse> saveCompetitionResultFile(@RequestBody WSCompetitionResultFile resultFile);
+	
+	@PostMapping("/competition/raw")
+	public ResponseEntity<WSDefaultApiResponse> saveCompetitionResultFile(@RequestBody WSCompetitionResultFileRaw resultFile);
 	
 	@GetMapping("/competition/ranking/{ranking}")
 	public ResponseEntity<List<WSCompetitionResult>> getCompetitorByRanking(@PathVariable("ranking") Integer ranking);
