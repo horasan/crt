@@ -14,7 +14,7 @@ import com.devo.crt.restful.competition.v1.WSCompetitionResultFileRaw;
 import com.devo.crt.restful.competition.v1.WSDefaultApiResponse;
 
 /**
- * TODO: RIZA - Description is here!
+ * Competition related exposed Restful APIs.
  * 
  * @author rizahorasan@gmail.com
  * @since Dec 2019

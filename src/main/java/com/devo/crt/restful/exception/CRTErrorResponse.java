@@ -5,7 +5,7 @@ import java.time.LocalDateTime;
 import lombok.Getter;
 import lombok.Setter;
 /**
- * TODO: RIZA - Description is here!
+ * Represent custom error message for RestFul API responses.
  * 
  * @author rizahorasan@gmail.com
  * @since Dec 2019

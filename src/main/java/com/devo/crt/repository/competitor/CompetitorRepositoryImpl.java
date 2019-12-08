@@ -9,9 +9,8 @@ import org.springframework.stereotype.Repository;
 import com.devo.crt.repository.competition.CompetitionResultRepository;
 import com.devo.crt.service.ranking.model.CompetitionResultBM;
 import com.devo.crt.service.ranking.model.CompetitionResultFileBM;
-import com.devo.crt.service.ranking.model.CompetitorBM;
 /**
- * TODO: RIZA - Description is here!
+ * Competitor repository implementations.
  * 
  * @author rizahorasan@gmail.com
  * @since Dec 2019

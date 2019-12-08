@@ -19,7 +19,7 @@ import com.devo.crt.restful.exception.CompetitionResultFileNotFound;
 import com.devo.crt.service.ranking.model.CompetitionResultBM;
 import com.devo.crt.service.ranking.model.CompetitionResultFileBM;
 /**
- * TODO: RIZA - Description is here!
+ * Competition file repository related implementations.
  * 
  * @author rizahorasan@gmail.com
  * @since Dec 2019

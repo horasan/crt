@@ -7,7 +7,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 /**
- * TODO: RIZA - Description is here!
+ * Represent competitor for API layer. 
  * 
  * @author rizahorasan@gmail.com
  * @since Dec 2019

@@ -22,7 +22,7 @@ import com.devo.crt.service.competitor.CompetitorService;
 import com.devo.crt.service.ranking.model.CompetitionResultBM;
 import com.devo.crt.service.ranking.model.CompetitorBM;
 /**
- * TODO: RIZA - Description is here!
+ * Unit tests for CompetitorApiImpl class.
  * 
  * @author rizahorasan@gmail.com
  * @since Dec 2019

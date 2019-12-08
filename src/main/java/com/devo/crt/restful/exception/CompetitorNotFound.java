@@ -1,6 +1,6 @@
 package com.devo.crt.restful.exception;
 /**
- * TODO: RIZA - Description is here!
+ * Custom exception for competitor not found.
  * 
  * @author rizahorasan@gmail.com
  * @since Dec 2019

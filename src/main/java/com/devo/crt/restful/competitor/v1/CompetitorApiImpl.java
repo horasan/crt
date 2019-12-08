@@ -17,7 +17,7 @@ import com.devo.crt.restful.exception.CompetitorNotFound;
 import com.devo.crt.service.competitor.CompetitorService;
 import com.devo.crt.service.ranking.model.CompetitionResultBM;
 /**
- * TODO: RIZA - Description is here!
+ * Competitor related RestFul APIs implementations.
  * 
  * @author rizahorasan@gmail.com
  * @since Dec 2019

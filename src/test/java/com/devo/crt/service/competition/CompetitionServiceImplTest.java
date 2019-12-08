@@ -18,7 +18,7 @@ import com.devo.crt.common.util.CRTSettings;
 import com.devo.crt.repository.competition.CompetitionResultRepository;
 import com.devo.crt.service.ranking.model.CompetitionResultFileBM;
 /**
- * TODO: RIZA - Description is here!
+ * Unit tests for CompetitionServiceImpl class.
  * 
  * @author rizahorasan@gmail.com
  * @since Dec 2019

@@ -4,7 +4,7 @@ import java.util.List;
 
 import com.devo.crt.service.ranking.model.CompetitionResultBM;
 /**
- * TODO: RIZA - Description is here!
+ * Competitor repository operations.
  * 
  * @author rizahorasan@gmail.com
  * @since Dec 2019

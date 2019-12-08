@@ -11,7 +11,8 @@ import org.springframework.stereotype.Component;
 import com.devo.crt.CrtApplication;
 
 /**
- * TODO: RIZA - Description is here!
+ * This event listener is used to check required folder structure for processing
+ * competition file.
  * 
  * @author rizahorasan@gmail.com
  * @since Dec 2019
@@ -20,27 +21,27 @@ import com.devo.crt.CrtApplication;
 
 @Component
 public class CRTInitializer {
-	
+
 	@Autowired
 	private CRTSettings settings;
-	
+
 	@EventListener
-    public void onApplicationEvent(ContextRefreshedEvent event) {
-        System.out.println("hello initializer");
-        validateCompetitionResultFileFolder();
-    }
+	public void onApplicationEvent(ContextRefreshedEvent event) {
+
+		validateCompetitionResultFileFolder();
+	}
 
 	private void validateCompetitionResultFileFolder() {
-		
+
 		if (!Objects.isNull(settings.getCompetitionResultFileFolderName())) {
-			//throw new RuntimeException("Competition Result File Folder Name is not defined!");
+
 			ApplicationHome home = new ApplicationHome(CrtApplication.class);
 			System.out.println(home.getDir());
 			System.out.println(home.getSource());
 		}
-		
-		System.out.println("Competition Result File Folder Name: ".concat(settings.getCompetitionResultFileFolderName()));
-		
-		
+
+		System.out
+				.println("Competition Result File Folder Name: ".concat(settings.getCompetitionResultFileFolderName()));
+
 	}
 }

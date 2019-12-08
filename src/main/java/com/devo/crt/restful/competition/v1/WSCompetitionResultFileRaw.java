@@ -5,7 +5,7 @@ import io.swagger.annotations.ApiModelProperty;
 import lombok.Getter;
 import lombok.Setter;
 /**
- * TODO: RIZA - Description is here!
+ * Represents raw competition result file.
  * 
  * @author rizahorasan@gmail.com
  * @since Dec 2019

@@ -18,7 +18,7 @@ import com.devo.crt.service.ranking.model.CompetitionResultFileBM;
 import com.devo.crt.service.ranking.model.DefaultServiceResponseBM;
 
 /**
- * TODO: RIZA - Description is here!
+ * Competition related exposed Restful API implementations.
  * 
  * @author rizahorasan@gmail.com
  * @since Dec 2019

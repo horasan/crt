@@ -4,7 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
 /**
- * TODO: RIZA - Description is here!
+ * Represents default service response message.
  * 
  * @author rizahorasan@gmail.com
  * @since Dec 2019

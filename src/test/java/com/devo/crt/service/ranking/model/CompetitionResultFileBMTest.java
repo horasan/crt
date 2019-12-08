@@ -10,7 +10,7 @@ import org.junit.platform.runner.JUnitPlatform;
 import org.junit.runner.RunWith;
 import org.mockito.junit.jupiter.MockitoExtension;
 /**
- * TODO: RIZA - Description is here!
+ * Unit tests for CompetitionResultFileBM class.
  * 
  * @author rizahorasan@gmail.com
  * @since Dec 2019

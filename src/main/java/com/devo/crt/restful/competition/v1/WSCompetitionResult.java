@@ -8,8 +8,9 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+
 /**
- * TODO: RIZA - Description is here!
+ * Represents API response for competition result for a competitor.
  * 
  * @author rizahorasan@gmail.com
  * @since Dec 2019
@@ -23,7 +24,7 @@ public class WSCompetitionResult {
 	private WSCompetitor wsCompetitor;
 	private Integer accumulatedPoints;
 	private Integer ranking;
-	
+
 	public CompetitionResultBM toBM() {
 		CompetitionResultBM competitionResultBM = new CompetitionResultBM();
 		competitionResultBM.setAccumulatedPoints(accumulatedPoints);
@@ -31,12 +32,12 @@ public class WSCompetitionResult {
 		competitionResultBM.setRanking(ranking);
 		return competitionResultBM;
 	}
-	
+
 	public WSCompetitionResult(CompetitionResultBM competitionResult) {
 		if (Objects.isNull(competitionResult)) {
 			return;
 		}
-		
+
 		wsCompetitor = new WSCompetitor(competitionResult.getCompetitorBM());
 		accumulatedPoints = competitionResult.getAccumulatedPoints();
 		ranking = competitionResult.getRanking();

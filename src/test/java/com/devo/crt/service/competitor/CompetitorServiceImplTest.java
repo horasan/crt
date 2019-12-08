@@ -21,7 +21,7 @@ import com.devo.crt.repository.competitor.CompetitorRepository;
 import com.devo.crt.service.ranking.model.CompetitionResultBM;
 import com.devo.crt.service.ranking.model.CompetitorBM;
 /**
- * TODO: RIZA - Description is here!
+ * Unit tests for CompetitorServiceImpl class.
  * 
  * @author rizahorasan@gmail.com
  * @since Dec 2019

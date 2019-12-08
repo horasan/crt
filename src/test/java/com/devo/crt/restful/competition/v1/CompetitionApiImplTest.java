@@ -16,7 +16,7 @@ import com.devo.crt.common.util.FileContentFormatter;
 import com.devo.crt.service.competition.CompetitionService;
 import com.devo.crt.service.ranking.model.DefaultServiceResponseBM;
 /**
- * TODO: RIZA - Description is here!
+ * Unit tests for CompetitionApiImpl class.
  * 
  * @author rizahorasan@gmail.com
  * @since Dec 2019

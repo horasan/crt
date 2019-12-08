@@ -5,7 +5,7 @@ import com.devo.crt.service.ranking.model.DefaultServiceResponseBM;
 import lombok.Getter;
 import lombok.Setter;
 /**
- * TODO: RIZA - Description is here!
+ * Represents default message for API response.
  * 
  * @author rizahorasan@gmail.com
  * @since Dec 2019

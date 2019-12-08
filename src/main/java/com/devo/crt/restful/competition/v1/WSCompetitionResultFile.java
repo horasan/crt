@@ -11,7 +11,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 /**
- * TODO: RIZA - Description is here!
+ * Represents API response for competition results for a competition.
  * 
  * @author rizahorasan@gmail.com
  * @since Dec 2019

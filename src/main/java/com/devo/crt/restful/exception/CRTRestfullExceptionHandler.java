@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 import org.springframework.web.context.request.WebRequest;
 /**
- * TODO: RIZA - Description is here!
+ * Exception handler for RestFul APIs and related responses.
  * 
  * @author rizahorasan@gmail.com
  * @since Dec 2019

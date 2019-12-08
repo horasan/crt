@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 
 import com.devo.crt.restful.competition.v1.WSCompetitionResult;
 /**
- * TODO: RIZA - Description is here!
+ * Competitor related RestFul APIs.
  * 
  * @author rizahorasan@gmail.com
  * @since Dec 2019

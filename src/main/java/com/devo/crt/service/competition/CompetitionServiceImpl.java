@@ -11,7 +11,7 @@ import com.devo.crt.service.ranking.model.CompetitionResultBM;
 import com.devo.crt.service.ranking.model.CompetitionResultFileBM;
 import com.devo.crt.service.ranking.model.DefaultServiceResponseBM;
 /**
- * TODO: RIZA - Description is here!
+ * Competition service operation implementations.
  * 
  * @author rizahorasan@gmail.com
  * @since Dec 2019

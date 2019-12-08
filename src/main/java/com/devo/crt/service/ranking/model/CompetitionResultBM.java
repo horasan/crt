@@ -4,7 +4,7 @@ import lombok.Getter;
 
 import lombok.Setter;
 /**
- * TODO: RIZA - Description is here!
+ * Represents competition result for a competitor.
  * 
  * @author rizahorasan@gmail.com
  * @since Dec 2019

@@ -9,7 +9,7 @@ import org.mockito.junit.jupiter.MockitoExtension;
 
 import com.devo.crt.service.ranking.model.CompetitionResultFileBM;
 /**
- * TODO: RIZA - Description is here!
+ * Unit tests for FileContentFormatter class.
  * 
  * @author rizahorasan@gmail.com
  * @since Dec 2019
