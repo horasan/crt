@@ -4,7 +4,13 @@ import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Getter;
 import lombok.Setter;
-
+/**
+ * TODO: RIZA - Description is here!
+ * 
+ * @author rizahorasan@gmail.com
+ * @since Dec 2019
+ * 
+ */
 @Getter
 @Setter
 @ApiModel(

@@ -6,10 +6,11 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 /**
- * Business layer class for competitor.
+ * TODO: RIZA - Description is here!
  * 
- *  @author horasanriza
- *  @since Dec 12, 2019
+ * @author rizahorasan@gmail.com
+ * @since Dec 2019
+ * 
  */
 
 @Getter

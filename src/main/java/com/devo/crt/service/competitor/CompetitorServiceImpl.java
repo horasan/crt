@@ -8,7 +8,13 @@ import org.springframework.stereotype.Service;
 import com.devo.crt.repository.competitor.CompetitorRepository;
 import com.devo.crt.service.ranking.model.CompetitionResultBM;
 
-
+/**
+ * TODO: RIZA - Description is here!
+ * 
+ * @author rizahorasan@gmail.com
+ * @since Dec 2019
+ * 
+ */
 @Service
 public class CompetitorServiceImpl implements CompetitorService {
 

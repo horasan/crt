@@ -7,7 +7,13 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 import org.springframework.web.context.request.WebRequest;
-
+/**
+ * TODO: RIZA - Description is here!
+ * 
+ * @author rizahorasan@gmail.com
+ * @since Dec 2019
+ * 
+ */
 @RestControllerAdvice
 public class CRTRestfullExceptionHandler {
 	

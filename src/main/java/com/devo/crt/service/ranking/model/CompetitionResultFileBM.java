@@ -8,7 +8,13 @@ import java.util.stream.Collectors;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-
+/**
+ * TODO: RIZA - Description is here!
+ * 
+ * @author rizahorasan@gmail.com
+ * @since Dec 2019
+ * 
+ */
 @Getter
 @Setter
 @NoArgsConstructor

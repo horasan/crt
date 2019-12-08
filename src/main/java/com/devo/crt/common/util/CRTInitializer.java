@@ -10,6 +10,14 @@ import org.springframework.stereotype.Component;
 
 import com.devo.crt.CrtApplication;
 
+/**
+ * TODO: RIZA - Description is here!
+ * 
+ * @author rizahorasan@gmail.com
+ * @since Dec 2019
+ * 
+ */
+
 @Component
 public class CRTInitializer {
 	
@@ -20,7 +28,6 @@ public class CRTInitializer {
     public void onApplicationEvent(ContextRefreshedEvent event) {
         System.out.println("hello initializer");
         validateCompetitionResultFileFolder();
-        
     }
 
 	private void validateCompetitionResultFileFolder() {

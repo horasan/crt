@@ -11,7 +11,13 @@ import com.devo.crt.repository.competition.CompetitionResultRepositoryFileStoreI
 import com.devo.crt.service.ranking.model.CompetitionResultBM;
 import com.devo.crt.service.ranking.model.CompetitionResultFileBM;
 import com.devo.crt.service.ranking.model.CompetitorBM;
-
+/**
+ * TODO: RIZA - Description is here!
+ * 
+ * @author rizahorasan@gmail.com
+ * @since Dec 2019
+ * 
+ */
 @Component
 public class FileContentFormatter {
 

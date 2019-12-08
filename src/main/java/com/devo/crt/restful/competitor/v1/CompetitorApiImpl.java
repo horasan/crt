@@ -16,7 +16,13 @@ import com.devo.crt.restful.competitor.CompetitorApi;
 import com.devo.crt.restful.exception.CompetitorNotFound;
 import com.devo.crt.service.competitor.CompetitorService;
 import com.devo.crt.service.ranking.model.CompetitionResultBM;
-
+/**
+ * TODO: RIZA - Description is here!
+ * 
+ * @author rizahorasan@gmail.com
+ * @since Dec 2019
+ * 
+ */
 @RestController
 @RequestMapping("/competitorapi/v1")
 @CrossOrigin

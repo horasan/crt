@@ -13,7 +13,13 @@ import com.devo.crt.restful.competition.v1.WSCompetitionResultFile;
 import com.devo.crt.restful.competition.v1.WSCompetitionResultFileRaw;
 import com.devo.crt.restful.competition.v1.WSDefaultApiResponse;
 
-
+/**
+ * TODO: RIZA - Description is here!
+ * 
+ * @author rizahorasan@gmail.com
+ * @since Dec 2019
+ * 
+ */
 public interface CompetitionApi {
 
 	@GetMapping("/competition")

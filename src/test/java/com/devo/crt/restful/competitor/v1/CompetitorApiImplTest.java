@@ -21,7 +21,13 @@ import com.devo.crt.restful.exception.CompetitorNotFound;
 import com.devo.crt.service.competitor.CompetitorService;
 import com.devo.crt.service.ranking.model.CompetitionResultBM;
 import com.devo.crt.service.ranking.model.CompetitorBM;
-
+/**
+ * TODO: RIZA - Description is here!
+ * 
+ * @author rizahorasan@gmail.com
+ * @since Dec 2019
+ * 
+ */
 @ExtendWith(MockitoExtension.class)
 @RunWith(JUnitPlatform.class)
 public class CompetitorApiImplTest {

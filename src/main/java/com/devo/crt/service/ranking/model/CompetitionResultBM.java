@@ -3,7 +3,13 @@ package com.devo.crt.service.ranking.model;
 import lombok.Getter;
 
 import lombok.Setter;
-
+/**
+ * TODO: RIZA - Description is here!
+ * 
+ * @author rizahorasan@gmail.com
+ * @since Dec 2019
+ * 
+ */
 @Getter
 @Setter
 public class CompetitionResultBM implements Comparable<CompetitionResultBM> {

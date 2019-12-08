@@ -18,10 +18,10 @@ import com.devo.crt.service.ranking.model.CompetitionResultFileBM;
 import com.devo.crt.service.ranking.model.DefaultServiceResponseBM;
 
 /**
- * Restful apis for ranking features.
+ * TODO: RIZA - Description is here!
  * 
- * @author horasanriza
- * @since Dec 12, 2019
+ * @author rizahorasan@gmail.com
+ * @since Dec 2019
  * 
  */
 

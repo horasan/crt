@@ -10,7 +10,13 @@ import com.devo.crt.repository.competition.CompetitionResultRepository;
 import com.devo.crt.service.ranking.model.CompetitionResultBM;
 import com.devo.crt.service.ranking.model.CompetitionResultFileBM;
 import com.devo.crt.service.ranking.model.DefaultServiceResponseBM;
-
+/**
+ * TODO: RIZA - Description is here!
+ * 
+ * @author rizahorasan@gmail.com
+ * @since Dec 2019
+ * 
+ */
 @Service
 public class CompetitionServiceImpl implements CompetitionService {
 

@@ -7,10 +7,10 @@ import com.devo.crt.service.ranking.model.CompetitionResultFileBM;
 import com.devo.crt.service.ranking.model.DefaultServiceResponseBM;
 
 /**
- * Ranking service features.
+ * TODO: RIZA - Description is here!
  * 
- * @author horasanriza
- * @since Dec 12, 2019
+ * @author rizahorasan@gmail.com
+ * @since Dec 2019
  * 
  */
 
