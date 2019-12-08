@@ -73,6 +73,7 @@ public class CompetitionApiImpl implements CompetitionApi {
 		return new ResponseEntity<List<WSCompetitionResult>>(result, HttpStatus.OK);
 	}
 
+	
 
 	@Override
 	public ResponseEntity<WSDefaultApiResponse> saveCompetitionResultFile(WSCompetitionResultFileRaw resultFile) {
