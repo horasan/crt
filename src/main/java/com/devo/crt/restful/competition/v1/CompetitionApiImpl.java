@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.devo.crt.common.util.FileContentFormatter;
 import com.devo.crt.restful.competition.CompetitionApi;
 import com.devo.crt.service.competition.CompetitionService;
 import com.devo.crt.service.ranking.model.CompetitionResultBM;
@@ -32,12 +33,15 @@ public class CompetitionApiImpl implements CompetitionApi {
 	// TODO: exception handling, return codes
 	
 	@Autowired
-	private CompetitionService rankingService;  
+	private CompetitionService competitionService;  
+	
+	@Autowired
+	private FileContentFormatter fileContentFormatter;
 	
 	@Override
 	public ResponseEntity<WSCompetitionResultFile> getAllRankings() {
 
-		CompetitionResultFileBM allRankings = rankingService.getAllRankings();
+		CompetitionResultFileBM allRankings = competitionService.getAllRankings();
 		
 		WSCompetitionResultFile result = new WSCompetitionResultFile(allRankings);
 		
@@ -48,7 +52,7 @@ public class CompetitionApiImpl implements CompetitionApi {
 	
 	@Override
 	public ResponseEntity<WSDefaultApiResponse> saveCompetitionResultFile(WSCompetitionResultFile resultFile) {
-		DefaultServiceResponseBM serviceResponse = rankingService.saveCompetitionResultFile(resultFile.toBM());
+		DefaultServiceResponseBM serviceResponse = competitionService.saveCompetitionResultFile(resultFile.toBM());
 		//
 		return new ResponseEntity<WSDefaultApiResponse>(new WSDefaultApiResponse(serviceResponse), HttpStatus.OK);
 	}
@@ -56,7 +60,7 @@ public class CompetitionApiImpl implements CompetitionApi {
 
 	@Override
 	public ResponseEntity<List<WSCompetitionResult>> getCompetitorByRanking(Integer ranking) {
-		List<CompetitionResultBM> competitorByRanking = rankingService.getCompetitorByRanking(ranking);
+		List<CompetitionResultBM> competitorByRanking = competitionService.getCompetitorByRanking(ranking);
 		List<WSCompetitionResult> result = competitorByRanking.stream().map(WSCompetitionResult::new).collect(Collectors.toList()); 
 		return new ResponseEntity<List<WSCompetitionResult>>(result, HttpStatus.OK);
 	}
@@ -64,7 +68,7 @@ public class CompetitionApiImpl implements CompetitionApi {
 
 	@Override
 	public ResponseEntity<List<WSCompetitionResult>> getCompetitorByAccumulatedPoints(Integer accumulatedPoints) {
-		List<CompetitionResultBM> competitorByRanking = rankingService.getCompetitorByAccumulatedPoints(accumulatedPoints);
+		List<CompetitionResultBM> competitorByRanking = competitionService.getCompetitorByAccumulatedPoints(accumulatedPoints);
 		List<WSCompetitionResult> result = competitorByRanking.stream().map(WSCompetitionResult::new).collect(Collectors.toList()); 
 		return new ResponseEntity<List<WSCompetitionResult>>(result, HttpStatus.OK);
 	}
@@ -72,10 +76,8 @@ public class CompetitionApiImpl implements CompetitionApi {
 
 	@Override
 	public ResponseEntity<WSDefaultApiResponse> saveCompetitionResultFile(WSCompetitionResultFileRaw resultFile) {
-		System.out.println("FILE NAME:" + resultFile.getFileName());
-		System.out.println("FILE CONTENT:" + resultFile.getRawFileContent());
-		return null;
+		CompetitionResultFileBM convertedResultFile = fileContentFormatter.convertFromInputFile(resultFile.getRawFileContent());
+		DefaultServiceResponseBM serviceResponse = competitionService.saveCompetitionResultFile(convertedResultFile);
+		return new ResponseEntity<WSDefaultApiResponse>(new WSDefaultApiResponse(serviceResponse), HttpStatus.OK);		
 	}
-
-
 }

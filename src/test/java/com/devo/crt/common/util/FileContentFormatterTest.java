@@ -24,7 +24,7 @@ public class FileContentFormatterTest {
 				"Competitor2 Name2 5500 2", System.getProperty("line.separator"),
 				"Competitor3 Name3 3300 3", System.getProperty("line.separator"));
 		
-		CompetitionResultFileBM resultFile = target.convertFromString(rawFileContent);
+		CompetitionResultFileBM resultFile = target.convertFromFile(rawFileContent);
 		
 		Assertions.assertThat(resultFile.getCompetitionResults().size()).isEqualTo(3);
 		

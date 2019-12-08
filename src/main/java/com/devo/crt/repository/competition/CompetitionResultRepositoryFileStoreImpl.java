@@ -94,7 +94,7 @@ public class CompetitionResultRepositoryFileStoreImpl implements CompetitionResu
 	    }
 	    
 	    //return new CompetitionResultFileBM(contentBuilder.toString());
-	    return fileContentFormatter.convertFromString(contentBuilder.toString());
+	    return fileContentFormatter.convertFromFile(contentBuilder.toString());
 		
 	}
 

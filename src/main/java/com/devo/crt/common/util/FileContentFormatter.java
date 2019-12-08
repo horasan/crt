@@ -20,9 +20,10 @@ public class FileContentFormatter {
 	
 	public String convertToString(CompetitionResultFileBM resultFile) {
 		return resultFile.toString();
+		
 	}
 	
-	public CompetitionResultFileBM convertFromString(String fileContent) {
+	public CompetitionResultFileBM convertFromFile(String fileContent) {
 		CompetitionResultFileBM competitionResultFileBM = new CompetitionResultFileBM();
 		
 		List<String> competitorList = Arrays.asList(fileContent.split(System.getProperty("line.separator")));
@@ -30,6 +31,7 @@ public class FileContentFormatter {
 		CompetitionResultBM competitionResultBM = null;
 		CompetitorBM competitorBM = null;
 		List<CompetitionResultBM> competitionResults = new ArrayList<CompetitionResultBM>();
+		
 		for(String competitorInfo : competitorList) {
 			competitionResultBM = new CompetitionResultBM();
 			String[] competitorPropertiesList = competitorInfo.split(" ");
@@ -38,6 +40,30 @@ public class FileContentFormatter {
 			competitorBM.setName(competitorPropertiesList[CompetitionResultRepositoryFileStoreImpl.COMPETITOR_NAME_INDEX]);
 			competitionResultBM.setAccumulatedPoints(Integer.valueOf(competitorPropertiesList[CompetitionResultRepositoryFileStoreImpl.COMPETITOR_ACCUMULATED_POINTS_INDEX]));
 			competitionResultBM.setRanking(Integer.valueOf(competitorPropertiesList[CompetitionResultRepositoryFileStoreImpl.COMPETITOR_RANK_INDEX]));
+			competitionResultBM.setCompetitorBM(competitorBM);
+			competitionResults.add(competitionResultBM);
+		}
+		competitionResultFileBM.setCompetitionResults(competitionResults);
+		return competitionResultFileBM;
+	}
+	
+	public CompetitionResultFileBM convertFromInputFile(String fileContent) {
+		CompetitionResultFileBM competitionResultFileBM = new CompetitionResultFileBM();
+		
+		List<String> competitorList = Arrays.asList(fileContent.split(System.getProperty("line.separator")));
+		
+		CompetitionResultBM competitionResultBM = null;
+		CompetitorBM competitorBM = null;
+		List<CompetitionResultBM> competitionResults = new ArrayList<CompetitionResultBM>();
+		
+		for(String competitorInfo : competitorList) {
+			competitionResultBM = new CompetitionResultBM();
+			String[] competitorPropertiesList = competitorInfo.split(" ");
+			competitorBM = new CompetitorBM();
+			competitorBM.setCompetitorId(competitorPropertiesList[CompetitionResultRepositoryFileStoreImpl.COMPETITOR_ID_INDEX]);
+			competitorBM.setName(competitorPropertiesList[CompetitionResultRepositoryFileStoreImpl.COMPETITOR_NAME_INDEX]);
+			competitionResultBM.setAccumulatedPoints(Integer.valueOf(competitorPropertiesList[CompetitionResultRepositoryFileStoreImpl.COMPETITOR_ACCUMULATED_POINTS_INDEX]));
+			competitionResultBM.setRanking(null);
 			competitionResultBM.setCompetitorBM(competitorBM);
 			competitionResults.add(competitionResultBM);
 		}

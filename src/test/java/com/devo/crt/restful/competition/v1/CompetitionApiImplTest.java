@@ -1,14 +1,20 @@
 package com.devo.crt.restful.competition.v1;
 
+import org.junit.Before;
 import org.junit.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.platform.runner.JUnitPlatform;
 import org.junit.runner.RunWith;
+import org.mockito.ArgumentMatchers;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
+import org.mockito.Mockito;
+import org.mockito.MockitoAnnotations;
 import org.mockito.junit.jupiter.MockitoExtension;
 
+import com.devo.crt.common.util.FileContentFormatter;
 import com.devo.crt.service.competition.CompetitionService;
+import com.devo.crt.service.ranking.model.DefaultServiceResponseBM;
 
 @ExtendWith(MockitoExtension.class)
 @RunWith(JUnitPlatform.class)
@@ -18,53 +24,35 @@ public class CompetitionApiImplTest {
 	private CompetitionApiImpl target;
 	
 	@Mock
-	private CompetitionService mockRankingService;
+	private CompetitionService mockCompetitionService;
 	
-	/*
-	 * TODO: Helper yardimiyla cevrilecek.
-	 */
-	@Test
-	public void testSaveCompetitionResultFile_with_Raw_File_Content() {
+	@Mock
+	private FileContentFormatter mockFileContentFormatter;
+	
+	@Before
+	public void setUp() {
+		MockitoAnnotations.initMocks(this);
 		
-		WSCompetitionResultFileRaw rawFile = new WSCompetitionResultFileRaw();
-		rawFile.setFileName("fileName");
-		rawFile.setRawFileContent("...");
-		
-		target.saveCompetitionResultFile(rawFile);
 	}
 	
-	/*
-	 * TODO: Implementation is missing
-	 * 
-	 */
+
 	@Test
 	public void testSaveCompetitionResultFile() {
 		
-		/*
-		WSCompetitionResultFile competitionResultFile = new WSCompetitionResultFile();
-		List<WSCompetitionResult> competitionResults = Arrays.asList(getWSCompetitionResult(1), getWSCompetitionResult(1));
-		competitionResultFile.setCompetitionResults(competitionResults);
-	
-		Mockito.when(mockRankingService.saveCompetitionResultFile(Matchers.any(CompetitionResultFileBM .class))).thenReturn(arg0);
+		WSCompetitionResultFileRaw competitionResultFileRaw = new WSCompetitionResultFileRaw();
+		competitionResultFileRaw.setFileName("fileName");
+		competitionResultFileRaw.setRawFileContent("Competitor4 name4 101\r\nCompetitor3 name3 104\r\nCompetitor2 name2 102\r\nCompetitor1 name1 101");
 		
-		target.saveCompetitionResultFile(competitionResultFile);
-		*/
+		Mockito.when(mockFileContentFormatter.convertFromInputFile(ArgumentMatchers.anyString())).thenReturn(null);
+		DefaultServiceResponseBM arg0 = new DefaultServiceResponseBM("message");
+		Mockito.when(mockCompetitionService.saveCompetitionResultFile(ArgumentMatchers.any())).thenReturn(arg0);
+		
+		target.saveCompetitionResultFile(competitionResultFileRaw);
+		
+		Mockito.verify(mockFileContentFormatter, Mockito.times(1)).convertFromInputFile(ArgumentMatchers.anyString());
+		Mockito.verify(mockCompetitionService, Mockito.times(1)).saveCompetitionResultFile(ArgumentMatchers.any());
+		
 		
 	}
 	
-	private WSCompetitionResult getWSCompetitionResult(int index) {
-		WSCompetitionResult wsCompetitionResult = new WSCompetitionResult();
-		wsCompetitionResult.setAccumulatedPoints(100+index);
-		wsCompetitionResult.setRanking(index);
-		WSCompetitor wsCompetitor = getWSCompetitor(index);
-		wsCompetitionResult.setWsCompetitor(wsCompetitor);
-		return wsCompetitionResult;
-	}
-
-	private WSCompetitor getWSCompetitor(int index) {
-		WSCompetitor wsCompetitor= new WSCompetitor();
-		wsCompetitor.setCompetitorId("competitorId".concat(String.valueOf(index)));
-		wsCompetitor.setName("name".concat(String.valueOf(index)));
-		return wsCompetitor;
-	}
 }
