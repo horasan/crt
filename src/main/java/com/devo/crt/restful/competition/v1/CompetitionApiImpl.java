@@ -1,7 +1,5 @@
 package com.devo.crt.restful.competition.v1;
 
-import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -17,8 +15,8 @@ import com.devo.crt.service.ranking.model.DefaultServiceResponseBM;
 
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
-import io.swagger.annotations.ApiResponses;
 import io.swagger.annotations.ApiResponse;
+import io.swagger.annotations.ApiResponses;
 
 /**
  * Competition related exposed Restful API implementations.

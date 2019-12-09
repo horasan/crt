@@ -38,42 +38,54 @@ public class CompetitionResultRepositoryFileStoreImpl implements CompetitionResu
 	
 	@Override
 	public void saveCompetitionResultFile(CompetitionResultFileBM resultFile) {
-		//Save file to folders etc.
+		//Save file to folders.
 		
 		String result = fileContentFormatter.convertToString(resultFile);
 		
 		// save string to file
-		File storeDirectory = new File(settings.getCompetitionResultFileFolderName());
+		File storeDirectory = new File(getResultFileFolder());
 		
 		if (!storeDirectory.exists()) {
 			storeDirectory.mkdir();
 		}
 		
-		File storeFile = new File(settings.getCompetitionResultFileFolderName().concat("//testFile1.txt"));
+		File storeFile = new File(getResultFileFolder().concat("\\").concat(getFileName()));
 		
+	
 		if (!storeFile.exists()) {
 			try {
 				storeFile.createNewFile();
+				
 			} catch (IOException e) {
-				System.out.println("File creation error!");
+				throw new RuntimeException(e.getMessage());
 			}
 		}
-		
+	
 		byte[] strToBytes = result.getBytes();
 		 
 	    try {
 			Files.write(storeFile.toPath(), strToBytes, StandardOpenOption.TRUNCATE_EXISTING);
 		} catch (IOException e) {
-			//throw new Exception("File error!");
-			System.out.println("File writing error!");
+			throw new RuntimeException(e.getMessage());
 		}
 		
+	}
+
+	private String getFileName() {
+		return settings.getCompetitionResultFileName();
+	}
+
+	private String getResultFileFolder() {
+		
+		
+		
+		return settings.getCompetitionResultFileFolderName();
 	}
 
 	@Override
 	public CompetitionResultFileBM getCompetitionResultFile() {
 
-		String fileName = settings.getCompetitionResultFileFolderName().concat("//testFile1.txt");
+		String fileName = getResultFileFolder().concat("\\").concat(getFileName());
 		
 		File competitionResultFile = new File(fileName);
 		
