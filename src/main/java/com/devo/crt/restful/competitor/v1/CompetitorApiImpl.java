@@ -12,10 +12,16 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.devo.crt.restful.competition.v1.WSCompetitionResult;
+import com.devo.crt.restful.competition.v1.WSDefaultApiResponse;
 import com.devo.crt.restful.competitor.CompetitorApi;
 import com.devo.crt.restful.exception.CompetitorNotFound;
 import com.devo.crt.service.competitor.CompetitorService;
 import com.devo.crt.service.ranking.model.CompetitionResultBM;
+
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
+import io.swagger.annotations.ApiResponse;
+import io.swagger.annotations.ApiResponses;
 
 /**
  * Competitor related RestFul APIs implementations.
@@ -27,11 +33,18 @@ import com.devo.crt.service.ranking.model.CompetitionResultBM;
 @RestController
 @RequestMapping("/competitorapi/v1")
 @CrossOrigin
+@Api(value = "Competitor Api", description = "Competitor related RestFul APIs implementations")
 public class CompetitorApiImpl implements CompetitorApi {
 
 	@Autowired
 	private CompetitorService competitorService;
 
+	@ApiOperation(value = "Returns a list of competitors based on given name as input.", response = WSCompetitionResult.class)
+	@ApiResponses(value = { 
+			@ApiResponse(code = 200, message = "Success"),
+			@ApiResponse(code = 500, message = "Competition Result File Not Found"),
+			@ApiResponse(code = 404, message = "{competitorName} not found")
+	})
 	@Override
 	public ResponseEntity<List<WSCompetitionResult>> getCompetitor(String competitorName) {
 

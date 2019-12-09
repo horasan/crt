@@ -26,7 +26,7 @@ public class CRTRestfullExceptionHandler {
 		errorResponse.setMessage(ex.getMessage());
 		errorResponse.setStatus(HttpStatus.INTERNAL_SERVER_ERROR.value());
 		errorResponse.setCode("competition.result.file.not.found");
-		return new ResponseEntity<>(errorResponse, HttpStatus.NOT_FOUND);
+		return new ResponseEntity<>(errorResponse, HttpStatus.INTERNAL_SERVER_ERROR);
 
 	}
 

@@ -14,18 +14,20 @@ import lombok.Setter;
 @Getter
 @Setter
 @ApiModel(
-		description=""
+		description="Represents raw competition result file."
 		)
 public class WSCompetitionResultFileRaw {
 	
-	@ApiModelProperty(notes="Name of the uploaded file")
+	@ApiModelProperty(
+			notes="Name of the uploaded file",
+		    example = "result.txt")
 	private String fileName;
 	
-	@ApiModelProperty(notes="Expected file format: {competitorId: string} {name: string} {accumulatedPoints: integer} \r\n"
-			+ "Example: \r\n"
-			+ "Competitor1 Name 5500\r\n"
-			+ "Competitor2 Name 6500\r\n"
-			+ "Competitor3 Name 3300\r\n"
-			+ "Competitor4 Name 7200")
+	@ApiModelProperty(notes="Expected file format: {competitorId: string} {name: string} {accumulatedPoints: integer} \r\n",
+			example="Competitor4 name4 101\r\n"
+					+ "Competitor3 name3 104\r\n"
+					+ "Competitor2 name2 102\r\n"
+					+ "Competitor1 name1 101"
+			)
 	private String rawFileContent;
 }
