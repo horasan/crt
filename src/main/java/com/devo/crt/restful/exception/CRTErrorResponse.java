@@ -4,6 +4,7 @@ import java.time.LocalDateTime;
 
 import lombok.Getter;
 import lombok.Setter;
+
 /**
  * Represent custom error message for RestFul API responses.
  * 
@@ -18,5 +19,5 @@ public class CRTErrorResponse {
 	private String message;
 	private String code;
 	private int status;
-	
+
 }

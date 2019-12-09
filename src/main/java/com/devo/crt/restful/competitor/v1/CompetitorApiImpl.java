@@ -16,6 +16,7 @@ import com.devo.crt.restful.competitor.CompetitorApi;
 import com.devo.crt.restful.exception.CompetitorNotFound;
 import com.devo.crt.service.competitor.CompetitorService;
 import com.devo.crt.service.ranking.model.CompetitionResultBM;
+
 /**
  * Competitor related RestFul APIs implementations.
  * 
@@ -27,20 +28,21 @@ import com.devo.crt.service.ranking.model.CompetitionResultBM;
 @RequestMapping("/competitorapi/v1")
 @CrossOrigin
 public class CompetitorApiImpl implements CompetitorApi {
-	
+
 	@Autowired
-	private CompetitorService competitorService; 
-	
+	private CompetitorService competitorService;
+
 	@Override
 	public ResponseEntity<List<WSCompetitionResult>> getCompetitor(String competitorName) {
 
 		List<CompetitionResultBM> competitor = competitorService.getCompetitor(competitorName);
-		
-		if ( CollectionUtils.isEmpty(competitor)) {
+
+		if (CollectionUtils.isEmpty(competitor)) {
 			throw new CompetitorNotFound(competitorName);
 		}
-		
-		List<WSCompetitionResult> result = competitor.stream().map(WSCompetitionResult::new).collect(Collectors.toList()); 
+
+		List<WSCompetitionResult> result = competitor.stream().map(WSCompetitionResult::new)
+				.collect(Collectors.toList());
 		return new ResponseEntity<List<WSCompetitionResult>>(result, HttpStatus.OK);
 	}
 

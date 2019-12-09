@@ -1,6 +1,7 @@
 package com.devo.crt.restful.exception;
+
 /**
- * Custom exception for competition result file not found. 
+ * Custom exception for competition result file not found.
  * 
  * @author rizahorasan@gmail.com
  * @since Dec 2019
@@ -9,7 +10,7 @@ package com.devo.crt.restful.exception;
 @SuppressWarnings("serial")
 public class CompetitionResultFileNotFound extends RuntimeException {
 
-	public CompetitionResultFileNotFound( ) {
+	public CompetitionResultFileNotFound() {
 		super("Competition Result File Not Found");
 	}
 }

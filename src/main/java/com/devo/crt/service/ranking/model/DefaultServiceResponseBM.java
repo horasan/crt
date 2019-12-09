@@ -3,6 +3,7 @@ package com.devo.crt.service.ranking.model;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
+
 /**
  * Represents default service response message.
  * 

@@ -5,9 +5,6 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.nio.file.StandardOpenOption;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,7 +13,6 @@ import org.springframework.stereotype.Repository;
 import com.devo.crt.common.util.CRTSettings;
 import com.devo.crt.common.util.FileContentFormatter;
 import com.devo.crt.restful.exception.CompetitionResultFileNotFound;
-import com.devo.crt.service.ranking.model.CompetitionResultBM;
 import com.devo.crt.service.ranking.model.CompetitionResultFileBM;
 /**
  * Competition file repository related implementations.
@@ -76,8 +72,6 @@ public class CompetitionResultRepositoryFileStoreImpl implements CompetitionResu
 
 	@Override
 	public CompetitionResultFileBM getCompetitionResultFile() {
-		// TOODO: Refactor
-		List<String> list = new ArrayList<>();
 
 		String fileName = settings.getCompetitionResultFileFolderName().concat("//testFile1.txt");
 		
@@ -86,9 +80,7 @@ public class CompetitionResultRepositoryFileStoreImpl implements CompetitionResu
 		if (!competitionResultFile.exists()) {
 			throw new CompetitionResultFileNotFound();
 		}
-		
-		//CompetitionResultFileNotFound
-		
+
 		StringBuilder contentBuilder = new StringBuilder();
 	    try (Stream<String> stream = Files.lines( Paths.get(fileName))) 
 	    {
@@ -98,20 +90,8 @@ public class CompetitionResultRepositoryFileStoreImpl implements CompetitionResu
 	    {
 	        e.printStackTrace();
 	    }
-	    
-	    //return new CompetitionResultFileBM(contentBuilder.toString());
+
 	    return fileContentFormatter.convertFromFile(contentBuilder.toString());
 		
 	}
-
-	@Override
-	public List<CompetitionResultBM> getCompetitorByRanking(Integer ranking) {
-		return getCompetitionResultFile().getCompetitionResults().stream().filter(res -> res.getRanking().equals(ranking)).collect(Collectors.toList());
-	}
-
-	@Override
-	public List<CompetitionResultBM> getCompetitorByAccumulatedPoints(Integer accumulatedPoints) {
-		return getCompetitionResultFile().getCompetitionResults().stream().filter(res -> res.getAccumulatedPoints().equals(accumulatedPoints)).collect(Collectors.toList());
-	}
-	
 }

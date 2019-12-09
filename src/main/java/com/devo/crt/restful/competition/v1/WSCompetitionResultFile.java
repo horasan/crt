@@ -24,7 +24,7 @@ import lombok.Setter;
 public class WSCompetitionResultFile {
 
 	private List<WSCompetitionResult> competitionResults;
-	
+
 	public CompetitionResultFileBM toBM() {
 
 		CompetitionResultFileBM competitionResultFileBM = new CompetitionResultFileBM();
@@ -36,14 +36,14 @@ public class WSCompetitionResultFile {
 
 		return competitionResultFileBM;
 	}
-	
+
 	public WSCompetitionResultFile(CompetitionResultFileBM resultFile) {
 		if (Objects.isNull(resultFile)) {
 			return;
 		}
-		
-		competitionResults = resultFile.getCompetitionResults().stream().map(WSCompetitionResult::new).collect(Collectors.toList());
+
+		competitionResults = resultFile.getCompetitionResults().stream().map(WSCompetitionResult::new)
+				.collect(Collectors.toList());
 	}
-	
-	
+
 }

@@ -1,5 +1,6 @@
 package com.devo.crt.repository.competitor;
 
+import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -29,7 +30,8 @@ public class CompetitorRepositoryImpl implements CompetitorRepository {
 		
 		List<CompetitionResultBM> competitorList = competitionResultFile.getCompetitionResults().stream()
 				.filter(comp -> comp.getCompetitorBM().getName().equals(name))
-				//.map(CompetitionResultBM::getCompetitorBM)
+				.sorted((c1, c2) -> c1.compareTo(c2))
+				.sorted(Collections.reverseOrder())
 				.collect(Collectors.toList());
 		
 		return competitorList;

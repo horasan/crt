@@ -51,9 +51,6 @@ public class CompetitorApiImplTest {
 		
 	}
 
-	/**
-	 *	TODO: Validate items in API response are correctly mapped.
-	 */
 	@Test
 	public void testGetCompetitor_success() {
 		

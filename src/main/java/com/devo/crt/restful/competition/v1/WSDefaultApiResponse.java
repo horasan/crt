@@ -4,6 +4,7 @@ import com.devo.crt.service.ranking.model.DefaultServiceResponseBM;
 
 import lombok.Getter;
 import lombok.Setter;
+
 /**
  * Represents default message for API response.
  * 
@@ -15,7 +16,7 @@ import lombok.Setter;
 @Setter
 public class WSDefaultApiResponse {
 	private String message;
-	
+
 	public WSDefaultApiResponse(DefaultServiceResponseBM serviceResponse) {
 		message = serviceResponse.getMessage();
 	}

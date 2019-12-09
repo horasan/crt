@@ -29,9 +29,4 @@ public class CRTSettingImpl implements CRTSettings {
 		return env.getProperty("parameter.crt.competition.result.file.folder.name");
 	}
 
-	@Override
-	public String getCompetitionResultFileHistoryFolderName() {
-		return env.getProperty("parameter.crt.competition.result.file.history.folder.name");
-	}
-
 }

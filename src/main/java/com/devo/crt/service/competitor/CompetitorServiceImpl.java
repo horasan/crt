@@ -20,7 +20,7 @@ public class CompetitorServiceImpl implements CompetitorService {
 
 	@Autowired
 	private CompetitorRepository competitorRepository;
-	
+
 	public List<CompetitionResultBM> getCompetitor(String competitorName) {
 
 		return competitorRepository.findByName(competitorName);

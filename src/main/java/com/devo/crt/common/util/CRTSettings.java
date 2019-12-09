@@ -12,8 +12,6 @@ public interface CRTSettings {
 
 	public String getCompetitionResultFileFolderName();
 
-	public String getCompetitionResultFileHistoryFolderName();
-
 	public default String getNewLineCharacter() {
 		return System.getProperty("line.separator");
 	}

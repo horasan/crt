@@ -1,4 +1,5 @@
 package com.devo.crt.restful.exception;
+
 /**
  * Custom exception for competitor not found.
  * 
@@ -12,5 +13,5 @@ public class CompetitorNotFound extends RuntimeException {
 	public CompetitorNotFound(String name) {
 		super(name + " not found");
 	}
-	
+
 }

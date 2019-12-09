@@ -47,10 +47,8 @@ public class CompetitionServiceImplTest {
 		//settings.getCompetitionResultFileFolderName();
 		Mockito.when(mockSettings.getCompetitionResultFileFolderName()).thenReturn("folderName");
 		Mockito.doNothing().when(mockCompetitionResultRepository).saveCompetitionResultFile(ArgumentMatchers.any(CompetitionResultFileBM.class));
-		
+		target.saveCompetitionResultFile(new CompetitionResultFileBM());
 		Mockito.verify(mockSettings, times(1)).getCompetitionResultFileFolderName();
 		Mockito.verify(mockCompetitionResultRepository, times(1)).saveCompetitionResultFile(ArgumentMatchers.any(CompetitionResultFileBM.class));
-		
 	}
-	
 }
