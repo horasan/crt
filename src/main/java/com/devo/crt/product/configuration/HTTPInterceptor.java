@@ -10,7 +10,9 @@ public class HTTPInterceptor extends HandlerInterceptorAdapter {
 	@Override
     public boolean preHandle(HttpServletRequest requestServlet, HttpServletResponse responseServlet, Object handler) throws Exception
     {
-        System.out.println("HTTP INTERCEPTOR PREHANDLE CALLED");
+     
+		/*String requestData = requestServlet.getReader().lines().collect(Collectors.joining());
+		System.out.println("HTTP INTERCEPTOR PREHANDLE CALLED");*/
 
         return true;
     }
@@ -18,12 +20,14 @@ public class HTTPInterceptor extends HandlerInterceptorAdapter {
     @Override
     public void postHandle(HttpServletRequest request, HttpServletResponse response, Object handler, ModelAndView modelAndView) throws Exception
     {
-        System.out.println("HTTP INTERCEPTOR POSTHANDLE CALLED");
+    	//String requestData = response..lines().collect(Collectors.joining());
+    	
+        /*System.out.println("HTTP INTERCEPTOR POSTHANDLE CALLED");*/
     }
 
     @Override
     public void afterCompletion(HttpServletRequest request, HttpServletResponse response, Object handler, Exception exception) throws Exception
     {
-        System.out.println("HTTP INTERCEPTOR AFTERCOMPLETION CALLED");
+        /*System.out.println("HTTP INTERCEPTOR AFTERCOMPLETION CALLED");*/
     }
 }

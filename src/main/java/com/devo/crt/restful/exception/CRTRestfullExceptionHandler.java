@@ -67,6 +67,19 @@ public class CRTRestfullExceptionHandler {
 
 	}
 
+	@ExceptionHandler(ObjectNotFound.class)
+	public ResponseEntity<CRTErrorResponse> handleObjectNotFound(Exception ex,
+			WebRequest request) {
+
+		CRTErrorResponse errorResponse = new CRTErrorResponse();
+		errorResponse.setTimeStamp(LocalDateTime.now());
+		errorResponse.setMessage(ex.getMessage());
+		errorResponse.setStatus(HttpStatus.NOT_FOUND.value());
+		errorResponse.setCode("product.system.id.not.found");
+		return new ResponseEntity<>(errorResponse, HttpStatus.NOT_FOUND);
+
+	}
+	
 	@ExceptionHandler(Exception.class)
 	public ResponseEntity<CRTErrorResponse> handleAllExceptions(Exception ex, WebRequest request) {
 
